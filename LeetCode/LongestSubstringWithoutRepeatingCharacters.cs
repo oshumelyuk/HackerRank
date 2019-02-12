@@ -1,18 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace HackerRankSolutions
+namespace LeetCode
 {
-    class Program
+    static class LongestSubstringWithoutRepeatingCharacters
     {
-        static void Main(string[] args)
-        {
-            // TheTimeInWords.Solve(args);
-            var len = LengthOfLongestSubstring(Console.ReadLine());
-
-        }
-
-        public static int LengthOfLongestSubstring(string s)
+        public static int Solve(string s)
         {
             if (s.Length == 0)
             {
