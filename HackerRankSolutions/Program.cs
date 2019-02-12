@@ -6,7 +6,7 @@ namespace HackerRankSolutions
     {
         static void Main(string[] args)
         {
-            MinimumDistances.Solve(args);
+            TheTimeInWords.Solve(args);
         }
     }
 }
