@@ -6,11 +6,12 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            //var len = LongestSubstringWithoutRepeatingCharacters.Solve(Console.ReadLine());
-            var comb = GenerateParentheses.Solve(int.Parse(Console.ReadLine()));
-            foreach (var res in comb)
+            var nums = new int[] { 17, 13, 11, 2, 3, 5, 7 };
+            var cards = RevealCardsInIncreasingOrder.Solve(nums);
+            foreach (var res in cards)
             {
-                Console.WriteLine(res);
+                Console.Write(res);
+                Console.Write(" ");
             }
 
         }
