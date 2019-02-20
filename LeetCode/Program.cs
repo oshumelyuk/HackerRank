@@ -6,14 +6,9 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var nums = new int[] { 17, 13, 11, 2, 3, 5, 7 };
-            var cards = RevealCardsInIncreasingOrder.Solve(nums);
-            foreach (var res in cards)
-            {
-                Console.Write(res);
-                Console.Write(" ");
-            }
-
+            var nums = new int[] { 1, 2, 3, 0, 2 };
+            var profit = BestTimeBuyAndSellStockwithCooldown.Solve(nums);
+            Console.WriteLine(profit);
         }
     }
 }
