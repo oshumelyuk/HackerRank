@@ -6,9 +6,9 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var nums = new int[] { 1, 2, 3, 0, 2 };
-            var profit = BestTimeBuyAndSellStockwithCooldown.Solve(nums);
-            Console.WriteLine(profit);
+            var nums = new int[] { 3, 3, 7, 7, 10, 11, 11 };
+            var res = SingleElementInSortedArray.Solve(nums);
+            Console.WriteLine(res);
         }
     }
 }
