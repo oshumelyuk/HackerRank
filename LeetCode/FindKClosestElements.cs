@@ -12,18 +12,41 @@ namespace LeetCode
                 return arr;
             }
 
-            var indexOfElem = IndexOf(arr, x);
-            var startingPoint = indexOfElem - ((int)Math.Ceiling(k / 2.0));
-            if (startingPoint < 0)
+            var indexOfElem = x <= arr[0] ? 0 : IndexOf(arr, x);
+
+            var subarr = new List<int>();
+            subarr.Add(arr[indexOfElem]);
+            var idxFirst = indexOfElem - 1;
+            var idxSecond = indexOfElem + 1;
+            while (subarr.Count != k)
             {
-                startingPoint = 0;
-            }
-            if (startingPoint + k > arr.Length) {
-                startingPoint = arr.Length - k;
+                if (idxFirst < 0)
+                {
+                    subarr.Add(arr[idxSecond]);
+                    idxSecond++;
+                    continue;
+                }
+
+                if (idxSecond >= arr.Length)
+                {
+                    subarr.Insert(0, arr[idxFirst]);
+                    idxFirst--;
+                    continue;
+                }
+
+                if (Math.Abs(x - arr[idxFirst]) <= Math.Abs(x - arr[idxSecond]))
+                {
+                    subarr.Insert(0, arr[idxFirst]);
+                    idxFirst--;
+                }
+                else
+                {
+                    subarr.Add(arr[idxSecond]);
+                    idxSecond++;
+                }
             }
 
-            var subArr = SubArray(arr, startingPoint, k, indexOfElem);
-            return subArr;
+            return subarr.ToArray();
         }
 
         private static int[] SubArray(int[] arr, int startingPoint, int k, int excludeIndex)
@@ -49,7 +72,8 @@ namespace LeetCode
 
                 if (newSearchIndex == searchIndex)
                 {
-                    return -1;
+                    var res = Math.Abs(arr[searchIndex] - x) >= Math.Abs(arr[searchIndex - 1]) ? searchIndex - 1 : searchIndex;
+                    return res;
                 }
                 var temp = newSearchIndex;
                 newSearchIndex = searchIndex;
