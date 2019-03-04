@@ -6,7 +6,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            var res = FindBottomLeftTreeValue.Solve(BuildTree());
+            var res = KeysAndRooms.Solve(new [] { new int[]{1,3 }, new int[] { 3, 0, 1}, new int[] { 2}, new int[] { 0 } });
             Console.WriteLine(res);
         }
 
